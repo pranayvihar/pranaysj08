@@ -4,18 +4,18 @@
       Project 08-05
 
       Chess Objects used for Chess Games
-      Author: 
-      Date:   
+      Author: pranay vihar
+      Date:   04-17-23
 
-      Filename: project08-05.js
+      Filename: objects.js
 */
 
 // Constructor Function for Chess Piece
 function piece(color, rank) {
-   color = color;    // the color of the piece (white or black)
-   rank = rank;      // the piece rank (Pawn, Knight, Bishop, Rook, Queen, King)
-   square = null;    // the square the piece occupies
-   image = null;     // stores the HTML code representing the image of the piece
+   this.color = color;    // the color of the piece (white or black)
+   this.rank = rank;      // the piece rank (Pawn, Knight, Bishop, Rook, Queen, King)
+   this.square = null;    // the square the piece occupies
+   this.image = null;     // stores the HTML code representing the image of the piece
 }
 
 // Constructor Function for a Chess Set
@@ -37,7 +37,7 @@ function chessSet(game) {
             }
             
             // Define a new chess piece
-            let chessPiece = new Piece(color, rank);
+            let chessPiece = new piece(color, rank);
             chessPiece.square = String.fromCharCode(j + 97) + (8 - i);
             let image = "";
             switch (game.board[i][j]) {
